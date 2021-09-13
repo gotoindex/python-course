@@ -21,7 +21,7 @@ This project takes advantage of Python's *argparse*. To launch a task, call it i
 
 Example:
 
-    python3 /method1.py 8 8
+    python3 tasks/task1/method1.py 8 8
 
 ### Goals
 
