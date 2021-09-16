@@ -10,17 +10,18 @@ class Sequence:
     the result will be smaller than this number.
     """
 
-    def __init__(self, n):
-        self.max = math.ceil(math.sqrt(abs(n)))
-    
+    def __init__(self, n:int):
+        self.max = math.ceil(math.sqrt(n))
+
     def show(self):
         print(', '.join(tuple(str(i) for i in range(1, self.max))))
 
 
-parser = argparse.ArgumentParser(description='Display all natural numbers \
-                                              whose square is less than n.')
-parser.add_argument('n', type=int,
-                    help='a positive integer. The square of each number in \
-                          the result will be smaller than this number')
-args = parser.parse_args()
-Sequence(args.n)
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Display all natural numbers \
+                                                  whose square is less than n.')
+    parser.add_argument('n', type=int,
+                        help='a positive integer. The square of each number in \
+                              the result will be smaller than this number')
+    args = parser.parse_args()
+    Sequence(abs(args.n)).show()
