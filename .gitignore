@@ -7,6 +7,3 @@ __pycache__/
 # VSCode
 .vscode/
 *.code-workspace
-
-# Other
-*.txt

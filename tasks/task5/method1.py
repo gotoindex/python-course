@@ -74,10 +74,13 @@ class FormattedNumber:
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Format an integer into a readable form.')
     parser.add_argument('number', type=int, help='a valid integer less than one undecillion')
+    parser.add_argument('-l', choices=('ru', 'ua', 'en',), default='ru',
+                        help='a language to display the number in')
     args = parser.parse_args()
 
     # loading the library of words
-    with open(os.path.join(os.path.dirname(__file__), 'words_ru.json'), encoding='utf-8') as jfile:
+    path = os.path.join(os.path.dirname(__file__), f'words_{args.l}.json')
+    with open(path, encoding='utf-8') as jfile:
         words = json.load(jfile)
         jfile.close()
 
