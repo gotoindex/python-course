@@ -2,7 +2,7 @@
 
 ## Description
 
-This repo contains solutions for the Softserve's Python Elementary Tasks.  
+This repo contains solutions for the SoftServe's Python Elementary Tasks.  
 Each package inside the *tasks* folder represents each task of the course.
 
 The project was created using the Visual Studio Code (version 1.60.0) and Python 3.9.1.

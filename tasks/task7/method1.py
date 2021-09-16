@@ -11,8 +11,10 @@ class Sequence:
     """
 
     def __init__(self, n):
-        max = math.sqrt(abs(n))
-        print(', '.join(tuple(str(i) for i in range(1, math.ceil(max)))))
+        self.max = math.ceil(math.sqrt(abs(n)))
+    
+    def show(self):
+        print(', '.join(tuple(str(i) for i in range(1, self.max))))
 
 
 parser = argparse.ArgumentParser(description='Display all natural numbers \

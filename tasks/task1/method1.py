@@ -2,7 +2,7 @@ import argparse
 
 
 class Chessboard:
-    """Main class of the program. Its purpose is to print out
+    """The purpose of this class is to print out
     a table of symbols imitating a chessboard.\n
     Any negative inputs will be converted into positive ones.
     ### Params:
@@ -13,10 +13,10 @@ class Chessboard:
     def __init__(self, width, height):
         self.width = abs(width)
         self.height = abs(height)
-        self.odd_line = ''.join(tuple('* ' for i in range(int(self.width / 2))))
+        self.odd_line = ''.join(tuple('█░' for i in range(int(self.width / 2))))
         if self.width % 2 != 0:
-            self.odd_line = self.odd_line + '*'
-        self.even_line = ' ' + self.odd_line[:-1]
+            self.odd_line = self.odd_line + '█'
+        self.even_line = '░' + self.odd_line[:-1]
         self.show()
 
     def show(self):
