@@ -19,7 +19,7 @@ class Chessboard:
         self.even_line = '░' + self.odd_line[:-1]
 
     def show(self):
-        for i in range(int(self.height / 2)):
+        for _ in range(int(self.height / 2)):
             print(self.odd_line)
             print(self.even_line)
         if self.height % 2 != 0:

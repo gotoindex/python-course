@@ -10,20 +10,28 @@ def get_tickets(path:str) -> list:
     return tickets
 
 
-def count_moscow(tickets:list, counter:int=0) -> int:
-    for ticket in tickets:
-        if (sum(tuple(int(digit) for digit in ticket[:3])) ==
-            sum(tuple(int(digit) for digit in ticket[3:6]))):
-            counter += 1
-    return counter
+class LuckyCounter:
+    """This class counts lucky tickets through different methods.
+    ### Params:
+    - ticket_list - a list of 6-digit strings (tickets).
+    """
 
+    def __init__(self, ticket_list):
+        self.tickets = ticket_list
 
-def count_piter(tickets:list, counter:int=0) -> int:
-    for ticket in tickets:
-        if (sum(tuple(int(digit) for digit in ticket[0:6:2])) ==
-            sum(tuple(int(digit) for digit in ticket[1:6:2]))):
-            counter += 1
-    return counter
+    def count_moscow(self, counter:int=0) -> int:
+        for ticket in self.tickets:
+            if (sum(tuple(int(digit) for digit in ticket[:3])) ==
+                sum(tuple(int(digit) for digit in ticket[3:6]))):
+                counter += 1
+        return counter
+
+    def count_piter(self, counter:int=0) -> int:
+        for ticket in self.tickets:
+            if (sum(tuple(int(digit) for digit in ticket[0:6:2])) ==
+                sum(tuple(int(digit) for digit in ticket[1:6:2]))):
+                counter += 1
+        return counter
 
 
 if __name__ == '__main__':
@@ -36,8 +44,8 @@ if __name__ == '__main__':
                         help='use Piter method to count lucky tickets')
     args = parser.parse_args()
 
-    tickets = get_tickets(args.path)
+    lc = LuckyCounter(get_tickets(args.path))
     if args.moscow:
-        print('Amount of lucky tickets (Moscow method):', count_moscow(tickets))
+        print('Amount of lucky tickets (Moscow method):', lc.count_moscow())
     if args.piter:
-        print('Amount of lucky tickets (Piter method):', count_piter(tickets))
+        print('Amount of lucky tickets (Piter method):', lc.count_piter())

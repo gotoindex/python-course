@@ -13,8 +13,8 @@ class Sequence:
     def __init__(self, n:int):
         self.max = math.ceil(math.sqrt(n))
 
-    def show(self):
-        print(', '.join(tuple(str(i) for i in range(1, self.max))))
+    def __str__(self):
+        return ', '.join(tuple(str(i) for i in range(1, self.max)))
 
 
 if __name__ == '__main__':
@@ -24,4 +24,4 @@ if __name__ == '__main__':
                         help='a positive integer. The square of each number in \
                               the result will be smaller than this number')
     args = parser.parse_args()
-    Sequence(abs(args.n)).show()
+    print(Sequence(abs(args.n)))

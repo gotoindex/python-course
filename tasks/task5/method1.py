@@ -10,40 +10,43 @@ class FormattedNumber:
     - words - a dict of words to use.
     """
 
-    def __init__(self, number, words):
+    def __init__(self, number:int, words:dict):
         self.raw_number = abs(number)
         self.negative = number < 0
         self.library = words
-        self.result = None
+        self.result = []
 
-    def format(self):
+    @property
+    def formatted_number(self) -> str:
+        """Text representation of the number, lowercase."""
         if self.raw_number:
             self.result = [self.library['other'][2]] if self.negative else []
-            self.split()
-            self.fill_result()
+            self.__split()
+            self.__fill_result()
         else:
             self.result = [self.library['ones'][0]]
+        return ' '.join(self.result)
 
-    def split(self):
+    def __split(self):
         self.chunks = "{:,}".format(self.raw_number).split(',')
         self.chunks[0] = "{:03}".format(int(self.chunks[0]))
-    
-    def fill_result(self):
+
+    def __fill_result(self):
         for i in range(len(self.chunks)):
-            self.bake_hundreds(i)
-            self.bake_tens(i)
-            self.bake_ones(i)
-            self.bake_thousands(i)
-    
-    def bake_hundreds(self, i):
+            self.__bake_hundreds(i)
+            self.__bake_tens(i)
+            self.__bake_ones(i)
+            self.__bake_thousands(i)
+
+    def __bake_hundreds(self, i):
         if (hundred := int(self.chunks[i][0])) != 0:
             self.result.append(self.library['hundreds'][hundred - 1])
-    
-    def bake_tens(self, i):
+
+    def __bake_tens(self, i):
         if int(self.chunks[i][1:]) > 20:
             self.result.append(self.library['tens'][int(self.chunks[i][1]) - 2])
-    
-    def bake_ones(self, i):
+
+    def __bake_ones(self, i):
         is_thousand = i == len(self.chunks) - 2
         amount = int(self.chunks[i][1:])
         if amount % 10 != 0 or amount == 10:
@@ -55,8 +58,8 @@ class FormattedNumber:
                 self.result.append(self.library['ones'][amount % 10])
             else:
                 self.result.append(self.library['ones'][amount])
-    
-    def bake_thousands(self, i):
+
+    def __bake_thousands(self, i):
         offset = len(self.chunks) - i - 2
         amount = int(self.chunks[i][1:])
         if i != len(self.chunks) - 1:
@@ -66,9 +69,9 @@ class FormattedNumber:
                 self.result.append(self.library['milestones'][offset][2])
             else:
                 self.result.append(self.library['milestones'][offset][1])
-    
-    def show(self):
-        print(' '.join(self.result).capitalize())
+
+    def __str__(self):
+        return self.formatted_number.capitalize()
 
 
 if __name__ == '__main__':
@@ -84,6 +87,4 @@ if __name__ == '__main__':
         words = json.load(jfile)
         jfile.close()
 
-    fn = FormattedNumber(args.number, words)
-    fn.format()
-    fn.show()
+    print(FormattedNumber(args.number, words))

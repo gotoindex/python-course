@@ -14,12 +14,14 @@ class Triangle:
 
     def __init__(self, name, a, b, c):
         self.name = name
-        self.calculate_area(a, b, c)
+        self.sides = (a, b, c)
 
-    def calculate_area(self, a, b, c):
-        """Calc or recalc the area of a triangle using Geron's method."""
-        p = 0.5 * (a + b + c)
-        self.area = math.sqrt(p * (p - a) * (p - b) * (p - c))
+    @property
+    def area(self) -> float:
+        """The area of a triangle calculated using Geron's method."""
+        p = 0.5 * sum(self.sides)
+        a, b, c = self.sides
+        return math.sqrt(p * (p - a) * (p - b) * (p - c))
 
     def __str__(self):
         return '[Triangle ' + self.name + ']: ' + '{:.2f}'.format(self.area) + ' cm'

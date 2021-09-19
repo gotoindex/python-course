@@ -24,8 +24,8 @@ class Fibonacci:
                 self.numbers.append(str(i))
             self.find_numbers_in_range(i + prev_i, i)
 
-    def show(self):
-        print(', '.join(self.numbers))
+    def __str__(self):
+        return ', '.join(self.numbers)
 
 
 if __name__ == '__main__':
@@ -36,4 +36,4 @@ if __name__ == '__main__':
     parser.add_argument('max', type=int,
                         help='an integer upper border of displayed numbers')
     args = parser.parse_args()
-    Fibonacci(args.min, args.max).show()
+    print(Fibonacci(args.min, args.max))
