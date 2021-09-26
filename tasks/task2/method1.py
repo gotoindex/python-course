@@ -47,14 +47,19 @@ class EnvelopeAnalysis:
         self.__try_fitting()
 
     def __try_fitting(self):
+        result = ''
         if self.first.fits_into(self.second):
             if self.first.rotated or self.second.rotated:
-                print('After rotation ', end='')
-            print('First envelope fits into Second one.')
+                result += 'After rotation '
+            result += 'First envelope fits into Second one.'
         if self.second.fits_into(self.first):
             if self.first.rotated or self.second.rotated:
-                print('After rotation ', end='')
-            print('Second envelope fits into First one.')
+                result += 'After rotation '
+            result += 'Second envelope fits into First one.'
+        self.__output(result)
+    
+    def __output(self, result):
+        print(result)
 
 
 if __name__ == '__main__':

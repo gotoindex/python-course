@@ -34,7 +34,7 @@ class TriangleSorting:
     input a preferred amount of triangles before sorting.
     """
 
-    def __init__(self, input_data):
+    def __init__(self, input_data:list):
         self.triangles = [Triangle(*t) for t in input_data]
 
     def sort(self):

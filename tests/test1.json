@@ -1,0 +1,84 @@
+{
+    "cases": [
+        {
+            "input": {
+                "width": 4, "height": 4
+            },
+            "output": [
+                "█░█░",
+                "░█░█",
+                "█░█░",
+                "░█░█"
+            ]
+        },
+        {
+            "input": {
+                "width": 6, "height": 4
+            },
+            "output": [
+                "█░█░█░",
+                "░█░█░█",
+                "█░█░█░",
+                "░█░█░█"
+            ]
+        },
+        {
+            "input": {
+                "width": 5, "height": 3
+            },
+            "output": [
+                "█░█░█",
+                "░█░█░",
+                "█░█░█"
+            ]
+        },
+        {
+            "input": {
+                "width": 1, "height": 1
+            },
+            "output": [
+                "█"
+            ]
+        },
+        {
+            "input": {
+                "width": 1, "height": 2
+            },
+            "output": [
+                "█",
+                "░"
+            ]
+        },
+        {
+            "input": {
+                "width": 2, "height": 1
+            },
+            "output": [
+                "█░"
+            ]
+        },
+        {
+            "input": {
+                "width": 0, "height": 0
+            },
+            "output": [
+            ]
+        },
+        {
+            "input": {
+                "width": 2, "height": 0
+            },
+            "output": [
+            ]
+        },
+        {
+            "input": {
+                "width": 0, "height": 2
+            },
+            "output": [
+                "",
+                ""
+            ]
+        }
+    ]
+}

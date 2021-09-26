@@ -3,17 +3,25 @@ import json
 import os
 
 
+def load_words(language:str) -> dict:
+    path = os.path.join(os.path.dirname(__file__), f'words_{language}.json')
+    with open(path, encoding='utf-8') as jfile:
+        words = json.load(jfile)
+        jfile.close()
+    return words
+
+
 class FormattedNumber:
     """Formats any integer into a readable form.
     ### Params:
     - number - a valid integer less than one undecillion;
-    - words - a dict of words to use.
+    - language - a [ru/ua/en] str to determine which library to use.
     """
 
-    def __init__(self, number:int, words:dict):
+    def __init__(self, number:int, language:str):
         self.raw_number = abs(number)
         self.negative = number < 0
-        self.library = words
+        self.library = load_words(language)
         self.result = []
 
     @property
@@ -81,10 +89,4 @@ if __name__ == '__main__':
                         help='a language to display the number in')
     args = parser.parse_args()
 
-    # loading the library of words
-    path = os.path.join(os.path.dirname(__file__), f'words_{args.l}.json')
-    with open(path, encoding='utf-8') as jfile:
-        words = json.load(jfile)
-        jfile.close()
-
-    print(FormattedNumber(args.number, words))
+    print(FormattedNumber(args.number, args.l))
