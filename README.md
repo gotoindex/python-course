@@ -26,9 +26,9 @@ Example:
 ### Goals
 
 During the development of the project following goals were achieved:
-- Learned how to use following software and services:
-  - [ ] [Django](https://www.djangoproject.com/)
-  - [ ] [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+- Learned how to use following modules:
+  - [x] [argparse](https://docs.python.org/3/library/argparse.html)
+  - [x] [unittest](https://docs.python.org/3/library/unittest.html)
 - Completed following tasks:
   - [x] Task 1, "Chessboard"
   - [x] Task 2, "Envelope Analysis"
@@ -38,6 +38,7 @@ During the development of the project following goals were achieved:
   - [x] Task 6, "Lucky Tickets"
   - [x] Task 7, "Number Sequence"
   - [x] Task 8, "Fibonacci Series for a Range"
+- Created tests for all completed tasks.
 
 Additional software and services used during the development:
 - [Git](https://git-scm.com/)
