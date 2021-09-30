@@ -6,7 +6,7 @@ class TextEditor:
     """The purpose of this class is to analyse and manipulate
     a piece of multiline text.
     ### Params:
-    - path - name of a .txt file filled with text.
+    - text - a list of strings to work with.
     """
 
     def __init__(self, text:list):
