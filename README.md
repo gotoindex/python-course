@@ -2,7 +2,7 @@
 
 ## Description
 
-This repo contains solutions for the Softserve's Python Elementary Tasks.  
+This repo contains solutions for the SoftServe's Python Elementary Tasks.  
 Each package inside the *tasks* folder represents each task of the course.
 
 The project was created using the Visual Studio Code (version 1.60.0) and Python 3.9.1.
@@ -21,23 +21,24 @@ This project takes advantage of Python's *argparse*. To launch a task, call it i
 
 Example:
 
-    python3 /method1.py 8 8
+    python3 tasks/task1/method1.py 8 8
 
 ### Goals
 
 During the development of the project following goals were achieved:
-- Learned how to use following software and services:
-  - [ ] [Django](https://www.djangoproject.com/)
-  - [ ] [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+- Learned how to use following modules:
+  - [x] [argparse](https://docs.python.org/3/library/argparse.html)
+  - [x] [unittest](https://docs.python.org/3/library/unittest.html)
 - Completed following tasks:
-  - [ ] Task 1, "Chessboard"
-  - [ ] Task 2, "Envelope Analysis"
-  - [ ] Task 3, "Sorting Triangles"
-  - [ ] Task 4, "File Parser"
-  - [ ] Task 5, "Number to a Word"
-  - [ ] Task 6, "Lucky Tickets"
-  - [ ] Task 7, "Number Sequence"
-  - [ ] Task 8, "Fibonacci Series for a Range"
+  - [x] Task 1, "Chessboard"
+  - [x] Task 2, "Envelope Analysis"
+  - [x] Task 3, "Sorting Triangles"
+  - [x] Task 4, "File Parser"
+  - [x] Task 5, "Number to a Word"
+  - [x] Task 6, "Lucky Tickets"
+  - [x] Task 7, "Number Sequence"
+  - [x] Task 8, "Fibonacci Series for a Range"
+- Created tests for all completed tasks.
 
 Additional software and services used during the development:
 - [Git](https://git-scm.com/)

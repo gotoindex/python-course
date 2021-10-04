@@ -1,0 +1,58 @@
+{
+    "cases": [
+        {
+            "input": {
+                "number": 0, "language": "ru"
+            },
+            "output": "Ноль"
+        },
+        {
+            "input": {
+                "number": -0, "language": "ua"
+            },
+            "output": "Нуль"
+        },
+        {
+            "input": {
+                "number": 1, "language": "ru"
+            },
+            "output": "Один"
+        },
+        {
+            "input": {
+                "number": -2, "language": "ru"
+            },
+            "output": "Минус два"
+        },
+        {
+            "input": {
+                "number": 316, "language": "ua"
+            },
+            "output": "Триста шістнадцять"
+        },
+        {
+            "input": {
+                "number": -804, "language": "ru"
+            },
+            "output": "Минус восемьсот четыре"
+        },
+        {
+            "input": {
+                "number": -1234306789, "language": "ua"
+            },
+            "output": "Мінус один мільярд двісті тридцять чотири мільйони триста шість тисяч сімсот вісімдесят дев'ять"
+        },
+        {
+            "input": {
+                "number": 2002002002002, "language": "ru"
+            },
+            "output": "Два триллиона два миллиарда два миллиона две тысячи два"
+        },
+        {
+            "input": {
+                "number": 333333333333333, "language": "en"
+            },
+            "output": "Three hundred thirty three trillion three hundred thirty three billion three hundred thirty three million three hundred thirty three thousand three hundred thirty three"
+        }
+    ]
+}

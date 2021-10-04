@@ -1,0 +1,22 @@
+{
+    "cases": [
+        {
+            "input": {
+                "ticket_list": ["123456", "112233..."]
+            },
+            "output": {
+                "moscow": 0,
+                "piter": 1
+            }
+        },
+        {
+            "input": {
+                "ticket_list": []
+            },
+            "output": {
+                "moscow": 0,
+                "piter": 0
+            }
+        }
+    ]
+}

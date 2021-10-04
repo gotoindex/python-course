@@ -1,0 +1,84 @@
+{
+    "cases": [
+        {
+            "input": {
+                "w1": 15, "h1": 10.5, "w2": 1, "h2": 1
+            },
+            "output": [
+                "Second envelope fits into First one.",
+                "After rotation Second envelope fits into First one."
+            ]
+        },
+        {
+            "input": {
+                "w1": 15, "h1": 10.5, "w2": 11, "h2": 1
+            },
+            "output": [
+                "Second envelope fits into First one."
+            ]
+        },
+        {
+            "input": {
+                "w1": 15, "h1": 10.5, "w2": 1, "h2": 11
+            },
+            "output": [
+                "After rotation Second envelope fits into First one."
+            ]
+        },
+        {
+            "input": {
+                "w1": 15, "h1": 10.5, "w2": 21, "h2": 16
+            },
+            "output": [
+                "First envelope fits into Second one.",
+                "After rotation First envelope fits into Second one."
+            ]
+        },
+        {
+            "input": {
+                "w1": 15, "h1": 10.5, "w2": 21, "h2": 11
+            },
+            "output": [
+                "First envelope fits into Second one."
+            ]
+        },
+        {
+            "input": {
+                "w1": 15, "h1": 10.5, "w2": 11, "h2": 21
+            },
+            "output": [
+                "After rotation First envelope fits into Second one."
+            ]
+        },
+        {
+            "input": {
+                "w1": 15, "h1": 10.5, "w2": 21, "h2": 1
+            },
+            "output": [
+            ]
+        },
+        {
+            "input": {
+                "w1": 1, "h1": 1, "w2": 1, "h2": 1
+            },
+            "output": [
+            ]
+        },
+        {
+            "input": {
+                "w1": 0, "h1": 0, "w2": 0, "h2": 0
+            },
+            "output": [
+            ]
+        },
+        {
+            "input": {
+                "w1": 2, "h1": 2, "w2": 0, "h2": 0
+            },
+            "output": [
+                "Second envelope fits into First one.",
+                "After rotation Second envelope fits into First one."
+            ]
+        }
+    ]
+}

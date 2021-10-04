@@ -1,0 +1,63 @@
+{
+    "ones": [
+        "zero",
+        "one",
+        "two",
+        "three",
+        "four",
+        "five",
+        "six",
+        "seven",
+        "eight",
+        "nine",
+        "ten",
+        "eleven",
+        "twelve",
+        "thirteen",
+        "fourteen",
+        "fifteen",
+        "sixteen",
+        "seventeen",
+        "eighteen",
+        "nineteen"
+    ],
+    "tens": [
+        "twenty",
+        "thirty",
+        "forty",
+        "fifty",
+        "sixty",
+        "seventy",
+        "eighty",
+        "ninety"
+    ],
+    "hundreds": [
+        "one hundred",
+        "two hundred",
+        "three hundred",
+        "four hundred",
+        "five hundred",
+        "six hundred",
+        "seven hundred",
+        "eight hundred",
+        "nine hundred"
+    ],
+    "milestones": [
+        ["thousand", "thousand", "thousand"],
+        ["million", "million", "million"],
+        ["billion", "billion", "billion"],
+        ["trillion", "trillion", "trillion"],
+        ["quadrillion", "quadrillion", "quadrillion"],
+        ["quintillion", "quintillion", "quintillion"],
+        ["sextillion", "sextillion", "sextillion"],
+        ["septillion", "septillion", "septillion"],
+        ["octillion", "octillion", "octillion"],
+        ["nonillion", "nonillion", "nonillion"],
+        ["decillion", "decillion", "decillion" ]
+    ],
+    "other": [
+        "one",
+        "two",
+        "minus"
+    ]
+}
