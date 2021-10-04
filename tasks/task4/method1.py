@@ -2,6 +2,21 @@ import argparse
 import os
 
 
+STR_COUNT = 'The substring "{}" appears in {} {} time(s).'
+STR_REPLACE = 'Successfully replaced {} with {}!'
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description='Count or replace substrs in a file.')
+    parser.add_argument('path',
+                        help='name of a .txt file filled with text')
+    parser.add_argument('--count',
+                        help='a substring to search for')
+    parser.add_argument('--replace', nargs=2,
+                        help='replace all substr1 with substr2')
+    return parser.parse_args()
+
+
 class TextEditor:
     """The purpose of this class is to analyse and manipulate
     a piece of multiline text.
@@ -23,37 +38,44 @@ class TextEditor:
         else:
             return counter
 
-    def replace(self, sub1:str, sub2:str):
+    def replace(self, sub1:str, sub2:str) -> list:
         for i in range(len(self.text)):
             self.text[i] = self.text[i].replace(sub1, sub2)
+        return self.text
 
-    def save(self, fullpath):
-        with open(fullpath, 'w') as txt:
-            for line in self.text:
+
+class TextFileManager:
+    """The purpose of this class is to load/save the content of a .txt file.
+    ### Params:
+    - fullpath - a full path to the file to load content from.
+    """
+
+    def __init__(self, fullpath:str):
+        self.fullpath = fullpath
+        self.text = []
+
+    def load(self) -> list:
+        with open(self.fullpath) as txt:
+            self.text = txt.readlines()
+            txt.close()
+        return self.text
+
+    def save(self, text:list=None):
+        with open(self.fullpath, 'w') as txt:
+            for line in text or self.text:
                 txt.write(line)
             txt.close()
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Count or replace substrs in a file.')
-    parser.add_argument('path',
-                        help='name of a .txt file filled with text')
-    parser.add_argument('--count',
-                        help='a substring to search for')
-    parser.add_argument('--replace', nargs=2,
-                        help='replace all substr1 with substr2')
-    args = parser.parse_args()
+    args = parse_args()
 
-    fullpath = os.path.join(os.path.dirname(__file__), args.path)
-    with open(fullpath) as txt:
-        text = txt.readlines()
-        txt.close()
+    f = TextFileManager(os.path.join(os.path.dirname(__file__), args.path))
 
-    text_editor = TextEditor(text)
+    text_editor = TextEditor(f.load())
     if args.count:
         c = text_editor.count_occurances(args.count)
-        print(f'The substring "{args.count}" appears in {args.path} {c} time(s).')
+        print(STR_COUNT.format(args.count, args.path, c))
     if args.replace:
-        text_editor.replace(*args.replace)
-        text_editor.save(fullpath)
-        print(f'Successfully replaced {args.replace[0]} with {args.replace[1]}!')
+        f.save(text_editor.replace(*args.replace))
+        print(STR_REPLACE.format(args.replace[0], args.replace[1]))

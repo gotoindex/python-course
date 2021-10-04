@@ -3,6 +3,14 @@ import json
 import os
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description='Format an integer into a readable form.')
+    parser.add_argument('number', type=int, help='a valid integer less than one undecillion')
+    parser.add_argument('-l', choices=('ru', 'ua', 'en',), default='ru',
+                        help='a language to display the number in')
+    return parser.parse_args()
+
+
 def load_words(language:str) -> dict:
     path = os.path.join(os.path.dirname(__file__), f'words_{language}.json')
     with open(path, encoding='utf-8') as jfile:
@@ -51,7 +59,7 @@ class FormattedNumber:
             self.result.append(self.library['hundreds'][hundred - 1])
 
     def __bake_tens(self, i):
-        if int(self.chunks[i][1:]) > 20:
+        if int(self.chunks[i][1:]) >= 20:
             self.result.append(self.library['tens'][int(self.chunks[i][1]) - 2])
 
     def __bake_ones(self, i):
@@ -83,10 +91,5 @@ class FormattedNumber:
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Format an integer into a readable form.')
-    parser.add_argument('number', type=int, help='a valid integer less than one undecillion')
-    parser.add_argument('-l', choices=('ru', 'ua', 'en',), default='ru',
-                        help='a language to display the number in')
-    args = parser.parse_args()
-
+    args = parse_args()
     print(FormattedNumber(args.number, args.l))

@@ -1,2 +1,2 @@
-I'm a reader, I love reading. Do you like reading?
-Everybody loves reading.
+I'm a programmer, I love programming. Do you like programming?
+Everybody loves programming.
