@@ -1,8 +1,8 @@
-# softserve-python-course
+# python-course
 
 ## Description
 
-This repo contains solutions for the SoftServe's Python Elementary Tasks.  
+This repo contains solutions for the Python Elem. Tasks.  
 Each package inside the *tasks* folder represents each task of the course.
 
 The project was created using the Visual Studio Code (version 1.60.0) and Python 3.9.1.
@@ -11,7 +11,7 @@ The project was created using the Visual Studio Code (version 1.60.0) and Python
 
 You can directly clone this project and try it for yourself:
 
-    git clone https://github.com/gotoindex/softserve-python-course.git
+    git clone https://github.com/gotoindex/python-course.git
 
 ## Usage
 
